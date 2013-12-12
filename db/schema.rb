@@ -17,29 +17,42 @@ ActiveRecord::Schema.define(version: 20131212212614) do
   enable_extension "plpgsql"
 
   create_table "black_cards", force: true do |t|
+    t.text     "text"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "game_players_white_cards", force: true do |t|
-    t.integer  "white_cards_id"
-    t.integer  "games_players_id"
+    t.integer  "white_card_id"
+    t.integer  "games_player_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "games", force: true do |t|
-    t.integer  "games_players_id"
-    t.integer  "black_cards_id"
+    t.integer  "black_card_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "games_players", force: true do |t|
+    t.integer  "game_id"
+    t.integer  "player_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "players", force: true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "white_cards", force: true do |t|
+    t.text     "text"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end
