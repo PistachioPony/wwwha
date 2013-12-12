@@ -4,7 +4,7 @@ class CreatePlayers < ActiveRecord::Migration
 
       t.string :name
       t.string :email
-      t.integer :games_players_id
+      t.integer :games_id
 
       t.timestamps
 
