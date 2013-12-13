@@ -1,3 +1,3 @@
-class Black_card < ActiveRecord::Base
-  has_many :games
+class BlackCard < ActiveRecord::Base
+  self.has_many(:games)
 end

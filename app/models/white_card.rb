@@ -1,3 +1,3 @@
-class White_card < ActiveRecord::Base
+class WhiteCard < ActiveRecord::Base
   
 end
