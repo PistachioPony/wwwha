@@ -332,7 +332,7 @@ end
   "What did Vin Diesel eat for dinner?",
   "What is Batman's guilty pleasure?",
   "TSA guidelines now prohibit ______ on airplanes.",
-  "In hte new Disney Channel Original Movie, Hannah Montana struggles with ______ for the first time.",
+  "In the new Disney Channel Original Movie, Hannah Montana struggles with ______ for the first time.",
   "In L.A. County Jail, word is you can trade 200 cigarettes for ______."
 ].each do |card_text|
   BlackCard.create(text: card_text)
