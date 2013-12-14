@@ -325,7 +325,7 @@ end
   "What's that sound?",
   "What gets better with age?",
   "What are my parents hiding from me?",
-  "Major League baseball has banned ______ for giving playersan unfair advantage.",
+  "Major League baseball has banned ______ for giving players an unfair advantage.",
   "Betcha can't have just one!",
   "Next on ESPN2: The World Series of ______.",
   "What does Dick Cheney prefer?",
