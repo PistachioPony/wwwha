@@ -14,6 +14,10 @@ class PlayersController < ApplicationController
     @player = Player.new
   end
 
+    # GET /players/1/edit
+  def edit
+  end
+
   # POST players
   def create 
     @player = Player.new(player_params)
@@ -24,6 +28,16 @@ class PlayersController < ApplicationController
       render action: 'new'
     end
   end
+
+  # PATCH/PUT /users/1
+  def update
+    if @player.update(player_params)
+      redirect_to @player, notice: 'Player was successfully updated.'
+    else
+      render action: 'edit'
+    end
+  end
+
 
   # DELETE /players/1
   def destroy
