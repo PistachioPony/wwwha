@@ -1,21 +1,8 @@
 class PlayersController < ApplicationController
+  before_action :logged_in!, :authorize_player!, only: [:edit, :update, :destroy]
 
   def index
-    @player = Player.all
-  end
-
-  # GET /players/1
-  def show
-    @player = Player.find(params[:id])
-  end
-
-  # GET /players/new
-  def new
-    @player = Player.new
-  end
-
-    # GET /players/1/edit
-  def edit
+    #@player = Player.all
   end
 
   # POST players
@@ -29,6 +16,20 @@ class PlayersController < ApplicationController
     end
   end
 
+  # GET /players/new
+  def new
+    @player = Player.new
+  end
+
+  # GET /players/1
+  def show
+    @player = Player.find(params[:id])
+  end 
+
+    # GET /players/1/edit
+  def edit
+  end  
+
   # PATCH/PUT /users/1
   def update
     if @player.update(player_params)
@@ -37,7 +38,6 @@ class PlayersController < ApplicationController
       render action: 'edit'
     end
   end
-
 
   # DELETE /players/1
   def destroy

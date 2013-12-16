@@ -1,14 +1,31 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Wwwha</title>
+<head> 
+<title>Worl Wide Web Against Humanity</title> 
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link href='http://fonts.googleapis.com/css?family=Cabin' rel='stylesheet' type='text/css'>  
 </head>
 <body>
+  <div class="wrapper">
+<!-- <nav>
+  <ul>
+    <li><%= link_to 'Sign Up ||', new_player_path %></li>
+    <li><%= link_to 'Sign In ||', new_session_path %></li>
 
-<%= yield %>
+    <% if logged_in? %>
+    <li><%= link_to 'Logout', session_path, :method => :delete %>
+    </li>   
+    </ul>
+  <% end %>
+</nav> -->
 
+    <div>
+    <%= yield %>
+    </div>
+
+  </div>
 </body>
 </html>

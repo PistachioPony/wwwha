@@ -1,4 +1,6 @@
-<h1><%= @player.email %></h1>
-
-<%= link_to 'Edit', edit_player_path(@player) %> |
-<%= link_to 'Destroy', @player, method: :delete, data: { confirm: 'Are you sure?' } %>
+<h3><%= @player.name %></h3>
+<h3><%= @player.email %></h3>
+<div>
+<%= link_to "Edit", edit_player_path(@player) %>
+<%= link_to 'Destroy', @player, method: :delete, data: { confirm: 'Are you sure?' } %> 
+</div>

@@ -1,4 +1,6 @@
 <%= form_tag '/session', method: :post do %>
+  <%= label_tag :name %>
+  <%= text_field_tag :name %>
   <%= label_tag :email %>
   <%= text_field_tag :email %>
   <%= label_tag :password %>
