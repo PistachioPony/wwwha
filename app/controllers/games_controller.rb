@@ -17,6 +17,9 @@ class GamesController < ApplicationController
     
     @game.update(black_card: BlackCard.order("RANDOM()").first)
 
+    # expecting this to give each player a deck
+    @game.start!
+
     redirect_to edit_player_game_path(current_player, @game)
   end
 
@@ -36,9 +39,5 @@ class GamesController < ApplicationController
   end
 
   def deck_for_player(game)
-     @cards = WhiteCard.order("RANDOM()")
-      .where
-      .not(id: WhiteCard.for_game(game).pluck(:id))
-      .limit(4)    
   end
 end
