@@ -30,7 +30,7 @@ class PlayersController < ApplicationController
   def edit
   end  
 
-  # PATCH/PUT /users/1
+  # PATCH/PUT /players/1
   def update
     if @player.update(player_params)
       redirect_to @player, notice: 'Player was successfully updated.'

@@ -180,7 +180,7 @@
   "Flightless birds",
   "Public ridicule",
   "Nazis",
-  "General Assembly's WDI teachers"
+  "General Assembly's WDI teachers",
   "A sea of troubles",
   "Free samples",
   "Horrifing laser removal accidents",
@@ -212,7 +212,7 @@
   "Cards Against Humanity",
   "Kamikaze Pilots",
   "My soul",
-  "Friends who eat all the snacks"
+  "Friends who eat all the snacks",
   "Waterboarding",
   "Flesh-eating bacteria",
   "Genghis Khan",
@@ -237,7 +237,7 @@
   "Seduction",
   "Women in yogurt commercials",
   "Land mines",
-  "Waking up half-naked in a Denny's parking lot"
+  "Waking up half-naked in a Denny's parking lot",
   "Dead parents",
   "Poor life choices",
   "A cooler full of organs",
