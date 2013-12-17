@@ -10,13 +10,14 @@ class GamesController < ApplicationController
   end
 
   def create
-    @game = Game.new(game_params)
+    @game = Game.create
+    
+    @game.players.append(Player.where(id: params[:game][:players]))
+    @game.players.append(current_player)
+    
+    @game.update(black_card: BlackCard.order("RANDOM()").first)
 
-    if @game.save
-      redirect_to player_game_path(current_player, @game)
-    else
-      render :new
-    end
+    redirect_to edit_player_game_path(current_player, @game)
   end
 
   def update
@@ -39,9 +40,5 @@ class GamesController < ApplicationController
       .where
       .not(id: WhiteCard.for_game(game).pluck(:id))
       .limit(4)    
-  end
-
-  def game_params
-    params.require(:game).permit(:players)
   end
 end
