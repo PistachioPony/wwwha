@@ -1,10 +1,10 @@
-body {
+/*body {
   width: 100%;
   /*text-align: center;*/
   background-color: rgb(255, 255, 255);
   /*background-color: rgba(0,0,0,.2);*/
 
-}
+}*/
 
 .wrapper {
   width: 100%;
@@ -37,6 +37,23 @@ body {
 
 .form {
   color: blue;
+}
+
+.turn-black {
+  width: 100%;
+  margin: 0 auto;
+  color: white;
+  text-align: center;
+  font-family: 'Cabin', sans-serif;
+  font-size: 80px;
+  background-color: black;
+  padding-top: 50px;
+  padding-bottom: 60px;
+}
+
+.turn-white {
+
+  font-size: 30px;  
 }
 
 p{

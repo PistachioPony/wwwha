@@ -24,10 +24,12 @@ class GamesController < ApplicationController
   end
 
   def update
-    #TODO get selected card
   end
 
   def edit
+    @game = Game.find(params[:id])
+
+    @deck = PlayersCard.where(game: @game, player: current_player).map(&:white_card).map(&:text)
   end
 
   private
