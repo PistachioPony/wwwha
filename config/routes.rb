@@ -6,6 +6,8 @@ Wwwha::Application.routes.draw do
     resources :games, only: [:edit, :update, :show] 
   end
 
+  resources :players_cards, only: [:update]
+
   resources :games, only: [:new, :create, :edit, :update]
   
   resource :session

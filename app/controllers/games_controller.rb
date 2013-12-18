@@ -5,8 +5,6 @@ class GamesController < ApplicationController
   end
 
   def show
-    for_game(@game)
-    deck_for_player(@game)
   end
 
   def create
@@ -29,7 +27,7 @@ class GamesController < ApplicationController
   def edit
     @game = Game.find(params[:id])
 
-    @deck = PlayersCard.where(game: @game, player: current_player).map(&:white_card).map(&:text)
+    @deck = PlayersCard.where(game: @game, player: current_player)
   end
 
   private
