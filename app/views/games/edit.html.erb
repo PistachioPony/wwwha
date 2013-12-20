@@ -8,7 +8,7 @@
   <%= form_for players_card do |f| %>
     <p><%= players_card.white_card.text %></p>
     <%= f.check_box :selected %>
-    <%= button_to "Choose!", {action: "update", id: players_card.id}, method: :patch %>
+    <%= f.button "Choose!" %>
   <% end %>
 <% end %>
 

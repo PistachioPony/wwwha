@@ -1,4 +1,6 @@
+<div class="turn-black">
 <%= form_for @game do |f| %>
   <%= f.select :players, options_from_collection_for_select(Player.all, :id, :name), {}, { multiple: true } %>
   <%= f.button "Start" %>
 <% end %>
+</div>

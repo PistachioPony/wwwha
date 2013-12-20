@@ -5,13 +5,15 @@ class GamesController < ApplicationController
   end
 
   def show
+    @cardselected = PlayersCard.where(selected: true)
+    #binding.pry
   end
 
   def create
     @game = Game.create
     
     @game.players.append(Player.where(id: params[:game][:players]))
-    @game.players.append(current_player)
+    #@game.players.append(current_player)
     
     @game.update(black_card: BlackCard.order("RANDOM()").first)
 
@@ -36,8 +38,5 @@ class GamesController < ApplicationController
     @whitecard = WhiteCard.includes(:players_cards)
     .merge(PlayersCard.where(game: game))
     .references(:players_cards)
-  end
-
-  def deck_for_player(game)
   end
 end

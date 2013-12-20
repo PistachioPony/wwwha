@@ -6,9 +6,11 @@ class PlayersCardsController < ApplicationController
     # save it!
 
     @cardselected = PlayersCard.find_by(id: params[:id])
+    
     @cardselected.selected = true
 
     @cardselected.save
 
+    redirect_to player_game_path(@cardselected.player, @cardselected.game)
   end 
 end
