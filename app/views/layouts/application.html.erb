@@ -10,26 +10,21 @@
 </head>
 <body>
   <div class="wrapper">
-<!-- <nav>
-  <ul>
-    <li><%= link_to 'Sign Up ||', new_player_path %></li>
-    <li><%= link_to 'Sign In ||', new_session_path %></li>
 
+<nav>
+  <ul>
     <% if logged_in? %>
-    <li><%= link_to 'Logout', session_path, :method => :delete %>
-    </li>   
+    <li><%= link_to 'Logout', session_path, :method => :delete %></li> 
+      <% else %>
+        <li><%= link_to 'Sign Up ||', new_player_path %></li>
+        <li><%= link_to 'Sign In ||', new_session_path %></li>
     </ul>
   <% end %>
-</nav> -->
-
-    <!-- <div class="turn-black"> -->
+</nav>    
       <% flash.each do |name, msg| %>
         <%= content_tag :div, msg, class: name %>
       <% end %>
-    <%= yield %>
-   <!--  </div> -->
-    
-
+    <%= yield %>   
   </div>
 </body>
 </html>

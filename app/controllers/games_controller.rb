@@ -13,7 +13,7 @@ class GamesController < ApplicationController
     @game = Game.create
     
     @game.players.append(Player.where(id: params[:game][:players]))
-    #@game.players.append(current_player)
+    @game.players.append(current_player)
     
     @game.update(black_card: BlackCard.order("RANDOM()").first)
 
@@ -24,6 +24,9 @@ class GamesController < ApplicationController
   end
 
   def update
+  end
+
+  def delete
   end
 
   def edit

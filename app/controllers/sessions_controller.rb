@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
 
     if player && player.authenticate(params[:password])
       session[:player_id] = player.id
-      flash[:notice] = "Logged in"
+      flash[:notice] = "You Are Now Logged In!"
       redirect_to(player)
     else
       flash[:notice] = "Incorrect Login. Try again."
