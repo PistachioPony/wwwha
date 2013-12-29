@@ -5,8 +5,10 @@ class GamesController < ApplicationController
   end
 
   def show
-    @cardselected = PlayersCard.where(selected: true)
-    #binding.pry
+    @cardselected = PlayersCard.where(game_id: Game.last, selected: true)
+#binding.pry
+    @whitecardid = @cardselected.pluck(:white_card_id)
+    @thewhitecardchosen = WhiteCard.find_by id: @whitecardid
   end
 
   def create

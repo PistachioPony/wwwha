@@ -10,7 +10,7 @@ class PlayersController < ApplicationController
     @player = Player.new(player_params)
 
     if @player.save
-      redirect_to new_session_path , notice: 'You are now a Playah! Sign In!'
+      redirect_to new_session_path, notice: 'You are now a Playah! Sign In!'
     else
       render action: 'new'
     end
