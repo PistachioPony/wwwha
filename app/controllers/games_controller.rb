@@ -5,6 +5,7 @@ class GamesController < ApplicationController
   end
 
   def show
+    @game = Game.find(params[:id])
     @cardselected = PlayersCard.where(game_id: Game.last, selected: true)
 #binding.pry
     @whitecardid = @cardselected.pluck(:white_card_id)

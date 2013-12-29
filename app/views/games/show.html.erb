@@ -1,4 +1,10 @@
 <!-- PlayersCard.where(game_id: @game, selected: true) -->
+<div class="turn-black">
+  <%= @game.black_card.text %>
+</div>
 
-<%= @thewhitecardchosen.text %>
-  
+<div class="turn-white">
+  The card you chose:
+</br>
+  <%= @thewhitecardchosen.text %>
+</div>
