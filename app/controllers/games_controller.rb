@@ -6,16 +6,25 @@ class GamesController < ApplicationController
 
   def show
     @game = Game.find(params[:id])
-    @cardselected = PlayersCard.where(game_id: Game.last, selected: true)
+
+    @deck = PlayersCard.where(game: @game, player: current_player)
+    
+    @cardselected = PlayersCard.where(game_id: Game.last, selected: true) #.pluck(:white_card_id)
 #binding.pry
     @whitecardid = @cardselected.pluck(:white_card_id)
+    
     @thewhitecardchosen = WhiteCard.find_by id: @whitecardid
+
+    @otherplayerscards = PlayersCard.where(game_id: Game.last, selected: true).pluck(:white_card_id)
+
+#binding.pry
   end
 
   def create
     @game = Game.create
     
     @game.players.append(Player.where(id: params[:game][:players]))
+    
     @game.players.append(current_player)
     
     @game.update(black_card: BlackCard.order("RANDOM()").first)

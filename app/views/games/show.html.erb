@@ -4,7 +4,15 @@
 </div>
 
 <div class="turn-white">
-  The card you chose:
+  Your choice card and your friend's choice cards are below, is the best card still yours? 
 </br>
-  <%= @thewhitecardchosen.text %>
+Vote for winning card:
+</br>
+
+  <% @otherplayerscards.each do |players_card| %>
+      <% others = WhiteCard.find_by id: players_card %>
+      <p><%= others.text %></p>
+  <% end %>
+
 </div>
+
